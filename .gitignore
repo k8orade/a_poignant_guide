@@ -1,9 +1,6 @@
 *.rbc
 capybara-*.html
 .rspec
-/log
-/tmp
-/db/*.sqlite3
 /public/system
 /coverage/
 /spec/tmp
@@ -19,13 +16,11 @@ config/secrets.yml
 /.bundle
 /vendor/bundle
 
-# these should all be checked in to normalise the environment:
-# Gemfile.lock, .ruby-version, .ruby-gemset
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
 
-# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
-.rvmrc
-
-# if using bower-rails ignore default bower_components path bower.json files
-/vendor/assets/bower_components
-*.bowerrc
-bower.json
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp

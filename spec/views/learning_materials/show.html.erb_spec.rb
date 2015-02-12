@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "learning_materials/show", type: :view do
+RSpec.describe "materials/show", type: :view do
   before(:each) do
-    @learning_material = assign(:learning_material, LearningMaterial.create!(
+    @material = assign(:material, Material.create!(
       :name => "Name",
       :source => "Source",
       :description => "MyText",

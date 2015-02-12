@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe "learning_materials/index", type: :view do
+RSpec.describe "materials/index", type: :view do
   before(:each) do
-    assign(:learning_materials, [
-      LearningMaterial.create!(
+    assign(:materials, [
+      Material.create!(
         :name => "Name",
         :source => "Source",
         :description => "MyText",
         :duration => 1,
         :difficulty => "Difficulty"
       ),
-      LearningMaterial.create!(
+      Material.create!(
         :name => "Name",
         :source => "Source",
         :description => "MyText",
@@ -20,7 +20,7 @@ RSpec.describe "learning_materials/index", type: :view do
     ])
   end
 
-  it "renders a list of learning_materials" do
+  it "renders a list of materials" do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
     assert_select "tr>td", :text => "Source".to_s, :count => 2

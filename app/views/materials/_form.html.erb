@@ -1,10 +1,10 @@
-<%= form_for(@learning_material) do |f| %>
-  <% if @learning_material.errors.any? %>
+<%= form_for(@material) do |f| %>
+  <% if @material.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@learning_material.errors.count, "error") %> prohibited this learning_material from being saved:</h2>
+      <h2><%= pluralize(@material.errors.count, "error") %> prohibited this material from being saved:</h2>
 
       <ul>
-      <% @learning_material.errors.full_messages.each do |message| %>
+      <% @material.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

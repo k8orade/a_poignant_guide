@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "LearningMaterials", type: :request do
-  describe "GET /learning_materials" do
+RSpec.describe "Materials", type: :request do
+  describe "GET /materials" do
     it "works! (now write some real specs)" do
-      get learning_materials_path
+      get materials_path
       expect(response).to have_http_status(200)
     end
   end

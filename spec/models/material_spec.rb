@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe LearningMaterial, type: :model do
+RSpec.describe Material, type: :model do
   before(:each) do
-    @valid_material = LearningMaterial.new(name: 'Book',
+    @valid_material = Material.new(name: 'Book',
                                            source: 'books.com/book',
                                            description: 'very good book',
                                            duration: 300,
@@ -20,7 +20,7 @@ RSpec.describe LearningMaterial, type: :model do
     end
 
     it 'is invalid when the name is not unique' do
-      material = LearningMaterial.create(name: 'Book',
+      material = Material.create(name: 'Book',
                                          source: 'books.com/book',
                                          description: 'different book',
                                          duration: 180,
@@ -29,7 +29,7 @@ RSpec.describe LearningMaterial, type: :model do
     end
 
     it 'is valid when the name is unique to the source' do
-      material = LearningMaterial.create(name: 'Book',
+      material = Material.create(name: 'Book',
                                          source: 'otherbooks.com/book',
                                          description: 'different book',
                                          duration: 180,

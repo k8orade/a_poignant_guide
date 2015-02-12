@@ -1,4 +1,4 @@
-class LearningMaterial < ActiveRecord::Base
+class Material < ActiveRecord::Base
   DIFFICULTIES = {
     'beginner'     => 'No coding experience required.',
     'intermediate' => 'You can explain the difference between HTML, CSS, Ruby and Rails.',

@@ -4,21 +4,28 @@
       Learn to code
       %br
       The way you want
+      -# Earn Rubies
     %p
       %a.btn.btn-success.btn-lg{href: '#', role: 'button'} Get Started &raquo;
 .container
+  %p.lead
+    We've compiled a nice big list of resources from around the internet to help
+    start your journey learning HTML, CSS, and Ruby. Sign up to track your
+    progress!
 
-  %p#notice= notice
-  %h1 Listing Materials
-  %table
+  %table.table.table-striped.table-hover.index-table
     %thead
       %tr
-        %th{:colspan => "3"}
+        %th Name
+        %th Source
+        %th Estimated Duration
+        %th Difficulty Level
     %tbody
       - @materials.each do |material|
         %tr
-          %td= link_to 'Show', material
-          %td= link_to 'Edit', edit_material_path(material)
-          %td= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' }
+          %td= link_to material.name, material_path(material)
+          %td= link_to material.source, material_path(material)
+          %td= link_to minutes_in_words(material.duration), material_path(material)
+          %td= link_to material.difficulty, material_path(material)
   %br/
   = link_to 'New Material', new_material_path

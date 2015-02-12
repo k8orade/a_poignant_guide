@@ -1,4 +1,5 @@
-= form_for(@material) do |f|
+= form_for(@material, html: { class: 'form-horizontal' }) do |f|
+
   - if @material.errors.any?
     #error_explanation
       %h2
@@ -7,5 +8,29 @@
       %ul
         - @material.errors.full_messages.each do |message|
           %li= message
-  .actions
-    = f.submit
+
+  .form-group
+    = f.label :name, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :source, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :source, class: 'form-control'
+  .form-group
+    = f.label :duration, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :duration, class: 'form-control'
+      %p.help-block
+        Time in minutes that you estimate it would take to complete the material.
+  .form-group
+    = f.label :difficulty, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.select :difficulty, Material::DIFFICULTIES.keys, {}, class: 'form-control'
+  .form-group
+    = f.label :description, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_area :description, class: 'form-control', rows: 4
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit class: 'btn btn-default'

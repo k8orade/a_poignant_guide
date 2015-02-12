@@ -16,6 +16,14 @@ p, ol, ul, td {
   &.lead { font-family: "Helvetica Neue", ​Helvetica, ​Arial, ​sans-serif; }
 }
 
+.heading-container {
+  background-color: $ruby-red;
+  padding: 20px 0;
+  margin-bottom: 30px;
+
+  h1 { color: #ffffff; }
+}
+
 pre {
   background-color: #eee;
   padding: 10px;

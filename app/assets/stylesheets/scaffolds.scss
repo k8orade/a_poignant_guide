@@ -1,8 +1,8 @@
 body {
   background-color: #fff;
   color: #333;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 20px;
   /* Move down content because we have a fixed navbar that is 50px tall */
   padding-top: 50px;
   padding-bottom: 20px;
@@ -10,8 +10,8 @@ body {
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 2  0px;
 
   &.lead { font-family: "Helvetica Neue", ​Helvetica, ​Arial, ​sans-serif; }
 }
@@ -75,3 +75,21 @@ div {
 .navbar-default {
   background-color: white;
 }
+
+.border-right {
+  border-right: 1px solid $navbar-default-border;
+}
+
+.border-left {
+  border-left: 1px solid $navbar-default-border;
+}
+
+.border-top {
+  border-top: 1px solid $navbar-default-border;
+}
+
+.btn-ruby {
+  @include button-variant($btn-danger-color, $ruby-red, darken($ruby-red, 5%));
+}
+
+a.btn { color: #ffffff; }

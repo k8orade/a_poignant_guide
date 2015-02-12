@@ -1,4 +1,19 @@
-%p#notice= notice
-= link_to 'Edit', edit_material_path(@material)
-|
-= link_to 'Back', materials_path
+.container
+  %h1= @material.name
+  .row
+    .col-md-8
+      %p= @material.description
+    .col-md-4.border-left.material-list
+      %p.border-bottom= link_to('Go To Material »',
+                                @material.source,
+                                class: 'btn btn-ruby btn-lg')
+      %p.lead.border-top
+        = @material.difficulty.capitalize
+        difficulty
+      %p= @material.difficulty_description
+
+      %p.lead.border-top
+        = minutes_in_words(@material.duration).capitalize
+        to complete
+
+  = link_to 'Back', materials_path

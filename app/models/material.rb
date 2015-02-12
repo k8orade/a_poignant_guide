@@ -16,4 +16,8 @@ class Material < ActiveRecord::Base
             presence: true
 
   default_scope { order(:name, :source) }
+
+  def difficulty_description
+    DIFFICULTIES[difficulty]
+  end
 end

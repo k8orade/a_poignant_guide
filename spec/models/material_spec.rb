@@ -78,4 +78,10 @@ RSpec.describe Material, type: :model do
       expect(@valid_material.valid?).to be_falsey
     end
   end
+
+  it 'gives the description of the difficulty level' do
+    expect(@valid_material.difficulty_description).to eq(
+      'No coding experience required.'
+    )
+  end
 end

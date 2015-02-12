@@ -7,6 +7,7 @@ class Material < ActiveRecord::Base
 
   validates :name, uniqueness: { scope: :source }
   validates :difficulty, inclusion: { in: DIFFICULTIES.keys }
+  validates :source, :format => URI::regexp(%w(http https))
   validates :name,
             :source,
             :description,

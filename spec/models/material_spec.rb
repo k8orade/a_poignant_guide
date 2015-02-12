@@ -13,6 +13,18 @@ RSpec.describe Material, type: :model do
     expect(@valid_material.valid?).to be_truthy
   end
 
+  it 'orders by name and source by default' do
+    a = @valid_material.dup
+    a.name = 'Antelope'
+    a.save
+    b = @valid_material.dup
+    b.source = 'https://zooks.com/book'
+    b.save
+    @valid_material.save
+
+    expect(Material.all).to eq [a, @valid_material, b]
+  end
+
   context 'name' do
     it 'is required' do
       @valid_material.name = nil

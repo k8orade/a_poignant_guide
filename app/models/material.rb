@@ -14,4 +14,6 @@ class Material < ActiveRecord::Base
             :duration,
             :difficulty,
             presence: true
+
+  default_scope { order(:name, :source) }
 end

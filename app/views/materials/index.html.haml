@@ -1,14 +1,24 @@
-%p#notice= notice
-%h1 Listing Materials
-%table
-  %thead
-    %tr
-      %th{:colspan => "3"}
-  %tbody
-    - @materials.each do |material|
+.jumbotron
+  .container
+    %h1
+      Learn to code
+      %br
+      The way you want
+    %p
+      %a.btn.btn-success.btn-lg{href: '#', role: 'button'} Get Started &raquo;
+.container
+
+  %p#notice= notice
+  %h1 Listing Materials
+  %table
+    %thead
       %tr
-        %td= link_to 'Show', material
-        %td= link_to 'Edit', edit_material_path(material)
-        %td= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New Material', new_material_path
+        %th{:colspan => "3"}
+    %tbody
+      - @materials.each do |material|
+        %tr
+          %td= link_to 'Show', material
+          %td= link_to 'Edit', edit_material_path(material)
+          %td= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' }
+  %br/
+  = link_to 'New Material', new_material_path

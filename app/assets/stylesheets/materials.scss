@@ -1,3 +1,10 @@
 // Place all the styles related to the materials controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jumbotron {
+  background: image-url('ruby-big.png') $ruby-red no-repeat top right;
+  padding: 75px 0;
+
+  .container h1 { color: white; }
+}

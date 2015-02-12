@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Learning Materials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Source</th>
+      <th>Description</th>
+      <th>Duration</th>
+      <th>Difficulty</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @learning_materials.each do |learning_material| %>
+      <tr>
+        <td><%= learning_material.name %></td>
+        <td><%= learning_material.source %></td>
+        <td><%= learning_material.description %></td>
+        <td><%= learning_material.duration %></td>
+        <td><%= learning_material.difficulty %></td>
+        <td><%= link_to 'Show', learning_material %></td>
+        <td><%= link_to 'Edit', edit_learning_material_path(learning_material) %></td>
+        <td><%= link_to 'Destroy', learning_material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Learning material', new_learning_material_path %>

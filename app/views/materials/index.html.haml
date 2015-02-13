@@ -1,18 +1,13 @@
-.jumbotron
+.heading-container
   .container
-    %h1
-      Learn to code
-      %br
-      The way you want
-      -# Earn Rubies
-    %p
-      %a.btn.btn-success.btn-lg{href: '#', role: 'button'} Get Started &raquo;
+    %h1 Available Materials
 .container
-  %p.lead
-    We've compiled a nice big list of resources from around the internet to help
-    start your journey learning HTML, CSS, and Ruby. Sign up to track your
-    progress!
-
+  - if notice
+    .alert.alert-success{ role: 'alert' }
+      %p= notic e
+  - if alert
+    .alert.alert-danger{ role: 'alert'}
+      %p= alert
   %table.table.table-striped.table-hover.index-table
     %thead
       %tr

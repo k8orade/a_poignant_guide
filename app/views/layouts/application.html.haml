@@ -11,7 +11,12 @@
     %nav.navbar.navbar-fixed-top.navbar-default
       .container
         .navbar-header
-          %button{type: 'button', class: 'navbar-toggle collapsed', 'data-toggle' => 'collapse', 'data-target' => '#navbar', 'aria-expanded' => 'false', 'aria-controls' => 'navbar'}
+          %button{type: 'button',
+                  class: 'navbar-toggle collapsed',
+                  'data-toggle' => 'collapse',
+                  'data-target' => '#navbar',
+                  'aria-expanded' => 'false',
+                  'aria-controls' => 'navbar'}
             %span.sr-only Toggle navigation
             %span.icon-bar
             %span.icon-bar
@@ -19,10 +24,13 @@
           = link_to 'A Poignant Guide', root_path, class: 'navbar-brand'
 
         #navbar.navbar-collapse.collapse
-          %form.navbar-form.navbar-right
+          = form_for(:user,
+                     as: :user,
+                     url: session_path(:user),
+                     html: { class: 'navbar-form navbar-right' }) do |f|
             .form-group
-              %input.form-control{type: 'text', placeholder: 'Email'}
+              = f.text_field :email, placeholder: 'Email', class: 'form-control'
             .form-group
-              %input.form-control{type: 'password', placeholder: 'Password'}
-            %button.btn.btn-success{type: 'submit'} Sign in
+              = f.password_field :password, placeholder: 'Password', class: 'form-control'
+            = f.submit 'Sign in', class: 'btn btn-success'
     = yield

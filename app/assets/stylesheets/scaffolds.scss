@@ -30,25 +30,10 @@ pre {
   font-size: 11px;
 }
 
-a {
-  color: #000;
-  &:visited {
-    color: #666;
-  }
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}
-
 div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
-}
-
-#notice {
-  color: green;
 }
 
 .field_with_errors {
@@ -101,3 +86,10 @@ div {
 }
 
 a.btn { color: #ffffff; }
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.margin-top { margin-top: $padding-large-vertical; }

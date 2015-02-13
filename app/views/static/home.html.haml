@@ -6,7 +6,10 @@
       The way you want
       -# Earn Rubies
     %p
-      %a.btn.btn-success.btn-lg{href: '#', role: 'button'} Get Started &raquo;
+      = link_to('Sign Up »',
+                new_user_registration_path,
+                class: 'btn btn-success btn-lg',
+                role: 'button')
 .container
   %p.lead
     We've compiled a nice big list of resources from around the internet to help

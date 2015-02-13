@@ -1,3 +1,8 @@
+- if notice
+  %p.notice= notice
+- if alert
+  %p.alert= alert
+
 = form_for(@material, html: { class: 'form-horizontal' }) do |f|
 
   - if @material.errors.any?
@@ -33,4 +38,4 @@
       = f.text_area :description, class: 'form-control', rows: 4
   .form-group
     .col-sm-offset-2.col-sm-10
-      = f.submit class: 'btn btn-default'
+      = f.submit class: 'btn btn-success'

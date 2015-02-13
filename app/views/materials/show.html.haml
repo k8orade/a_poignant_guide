@@ -2,6 +2,12 @@
   .container
     %h1= @material.name
 .container
+  - if notice
+    .alert.alert-success{ role: 'alert' }
+      %p= notic e
+  - if alert
+    .alert.alert-danger{ role: 'alert'}
+      %p= alert
   .row
     .col-md-8
       %p= @material.description

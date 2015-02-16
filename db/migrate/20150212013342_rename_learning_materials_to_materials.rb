@@ -1,5 +1,5 @@
-class RenameMaterialsToMaterials < ActiveRecord::Migration
+class RenameLearningMaterialsToMaterials < ActiveRecord::Migration
   def change
-    rename_table :materials, :materials
+    rename_table :learning_materials, :materials
   end
 end

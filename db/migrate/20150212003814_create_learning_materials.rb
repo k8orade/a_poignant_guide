@@ -1,6 +1,6 @@
-class CreateMaterials < ActiveRecord::Migration
+class CreateLearningMaterials < ActiveRecord::Migration
   def change
-    create_table :materials do |t|
+    create_table :learning_materials do |t|
       t.string :name
       t.string :source
       t.text :description
